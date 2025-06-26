@@ -73,7 +73,7 @@ async function installTinyTeXPosix() {
   }
 
   const fileName = "install-unx.sh";
-  const downloadUrl = "https://yihui.name/gh/tinytex/tools/install-bin-unix.sh";
+  const downloadUrl = "https://raw.githubusercontent.com/rstudio/tinytex/refs/heads/main/tools/install-bin-unix.sh";
   let downloadPath: string | null = null;
 
   try {
@@ -107,7 +107,7 @@ async function installTinyTeXPosix() {
 async function installTinyTeXWindows() {
   const fileName = "install-windows.bat";
   const downloadUrl =
-    "https://yihui.name/gh/tinytex/tools/install-bin-windows.bat";
+    "https://raw.githubusercontent.com/rstudio/tinytex/refs/heads/main/tools/install-bin-windows.bat";
   let downloadPath: string | null = null;
 
   try {
