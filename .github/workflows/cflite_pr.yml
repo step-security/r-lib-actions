@@ -5,7 +5,7 @@ on:
       - 'src/**'
   push:
     branches:
-      - v2-branch
+      - main
     paths:
       - 'src/**'
   workflow_dispatch:

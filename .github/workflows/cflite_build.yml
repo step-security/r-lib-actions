@@ -2,7 +2,7 @@ name: ClusterFuzzLite continuous builds
 on:
   push:
     branches:
-      - v2-branch
+      - main
     paths:
       - 'src/**'
   workflow_dispatch:
