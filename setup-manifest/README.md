@@ -1,7 +1,5 @@
 # setup-manifest
 
-[![RStudio community](https://img.shields.io/badge/community-github--actions-blue?style=social&logo=rstudio&logoColor=75AADB)](https://community.rstudio.com/new-topic?category=Package%20development&tags=github-actions)
-
 This action sets up a project based on a
 [Posit Connect `manifest.json` file](https://docs.posit.co/connect/user/publishing-cli-manifest/).
 
@@ -21,7 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: step-security/r-lib-actions/setup-manifest@feature/setup-manifest
+      - uses: step-security/r-lib-actions/setup-manifest@v2
 ```
 
 # How it works
@@ -31,10 +29,10 @@ This action only works on Linux.
 It uses a Docker container to install and run renv to convert the
 `manifest.json` file to an `renv.lock` file.
 
-Then it uses [`step-security/r-lib-actions/setup-r`](https://github.com/step-security/r-lib-actions/tree/main-branch/setup-r)
+Then it uses [`step-security/r-lib-actions/setup-r`](https://github.com/step-security/r-lib-actions/tree/main/setup-r)
 to install the required version of R.
 
-Finally, it uses [`step-security/r-lib-actions/setup-renv`](https://github.com/step-security/r-lib-actions/tree/main-branch/setup-renv)
+Finally, it uses [`step-security/r-lib-actions/setup-renv`](https://github.com/step-security/r-lib-actions/tree/main/setup-renv)
 to install required version of the dependent packages.
 
 # Known issues
