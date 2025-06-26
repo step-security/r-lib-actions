@@ -11,15 +11,17 @@ on:
         description: "Specify a base branch"
         required: false
         default: "main"
-  schedule:
-    - cron: "0 0 * * 1"
+      working_directory:
+        description: "Specify a working directory to run audit fix command"
+        required: true
 
 jobs:
   audit-fix:
-    uses: step-security/reusable-workflows/.github/workflows/audit_fix.yml@v1
+    uses: step-security/reusable-workflows/.github/workflows/audit_fix.yml@fix_Use-Audit-Fix-With-Mentioned-Directory
     with:
       force: ${{ inputs.force || false }}
       base_branch: ${{ inputs.base_branch || 'main' }}
+      working_directory: ${{ inputs.working_directory }}
 
 permissions:
   contents: write

@@ -251,7 +251,6 @@ async function acquireFortranMacOSOld(): Promise<string> {
 
 async function acquireUtilsMacOS() {
   // qpdf is needed by `--as-cran`
-  // https://github.com/step-security/r-lib-actions/issues/948
   try {
     process.env.HOMEBREW_NO_INSTALLED_DEPENDENTS_CHECK = "true";
     await exec.exec("brew", ["unlink", "pkg-config@0.29.2"], { silent: true });
@@ -621,7 +620,7 @@ async function acquireRtools(version: IRVersion) {
 async function acquireGsWindows() {
   await core.group("Downloading and installing Ghostscript", async () => {
     const dlpath = await tc.downloadTool(
-      "https://github.com/step-security/r-lib-actions-files/releases/download/v1.0.0/ghostscript-10.03.0-win.zip",
+      "https://github.com/r-lib/actions-files/releases/download/v1.0.0/ghostscript-10.03.0-win.zip",
     );
     const extractionPath = await tc.extractZip(dlpath);
     await io.cp(extractionPath, "c:/program files/gs", {

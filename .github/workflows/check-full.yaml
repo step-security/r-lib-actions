@@ -1,12 +1,9 @@
-# Workflow derived from https://github.com/step-security/r-lib-actions/tree/v2/examples
-# Need help debugging build failures? Start at https://github.com/step-security/r-lib-actions#where-to-find-help
-#
 # NOTE: This workflow is overkill for most R packages and
 # check-standard.yaml is likely a better choice.
 # usethis::use_github_action("check-standard") will install it.
 on:
   push:
-    branches: [main, master, v2-branch]
+    branches: [main, master]
   pull_request:
 
 name: R-CMD-check.yaml

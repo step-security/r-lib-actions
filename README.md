@@ -25,15 +25,15 @@ You can refer to these as well in your workflow files if you need to.
 
 ## List of actions
 
-1. [step-security/r-lib-actions/setup-r](https://github.com/step-security/r-lib-actions/tree/v2/setup-r) - Sets up [R](https://r-project.org)
-1. [step-security/r-lib-actions/setup-r-dependencies](https://github.com/step-security/r-lib-actions/tree/v2/setup-r-dependencies) - Installs packages declared in `DESCRIPTION`
-1. [step-security/r-lib-actions/setup-renv](https://github.com/step-security/r-lib-actions/tree/v2/setup-renv) - Installs packages from renv lockfile
-1. [step-security/r-lib-actions/setup-pandoc](https://github.com/step-security/r-lib-actions/tree/v2/setup-pandoc) - Sets up [pandoc](https://pandoc.org/)
-1. [step-security/r-lib-actions/setup-tinytex](https://github.com/step-security/r-lib-actions/tree/v2/setup-tinytex) - Sets up LaTeX with [tinytex](https://yihui.name/tinytex)
-1. [step-security/r-lib-actions/check-r-package](https://github.com/step-security/r-lib-actions/tree/v2/check-r-package) - Runs `R CMD check` on an R package
-1. [step-security/r-lib-actions/pr-fetch](https://github.com/step-security/r-lib-actions/tree/v2/pr-fetch) - Fetches changes of a PR associated with an event
-1. [step-security/r-lib-actions/pr-push](https://github.com/step-security/r-lib-actions/tree/v2/pr-push) - Pushes changes to a PR associated with an event
-1. [step-security/r-lib-actions/setup-manifest](https://github.com/step-security/r-lib-actions/tree/v2/setup-manifest) - Sets up an R project with a Posit Connect `manifest.json` file
+1. [step-security/r-lib-actions/setup-r](https://github.com/step-security/r-lib-actions/tree/main/setup-r) - Sets up [R](https://r-project.org)
+1. [step-security/r-lib-actions/setup-r-dependencies](https://github.com/step-security/r-lib-actions/tree/main/setup-r-dependencies) - Installs packages declared in `DESCRIPTION`
+1. [step-security/r-lib-actions/setup-renv](https://github.com/step-security/r-lib-actions/tree/main/setup-renv) - Installs packages from renv lockfile
+1. [step-security/r-lib-actions/setup-pandoc](https://github.com/step-security/r-lib-actions/tree/main/setup-pandoc) - Sets up [pandoc](https://pandoc.org/)
+1. [step-security/r-lib-actions/setup-tinytex](https://github.com/step-security/r-lib-actions/tree/main/setup-tinytex) - Sets up LaTeX with [tinytex](https://yihui.name/tinytex)
+1. [step-security/r-lib-actions/check-r-package](https://github.com/step-security/r-lib-actions/tree/main/check-r-package) - Runs `R CMD check` on an R package
+1. [step-security/r-lib-actions/pr-fetch](https://github.com/step-security/r-lib-actions/tree/main/pr-fetch) - Fetches changes of a PR associated with an event
+1. [step-security/r-lib-actions/pr-push](https://github.com/step-security/r-lib-actions/tree/main/pr-push) - Pushes changes to a PR associated with an event
+1. [step-security/r-lib-actions/setup-manifest](https://github.com/step-security/r-lib-actions/tree/main/setup-manifest) - Sets up an R project with a Posit Connect `manifest.json` file
 
 ## Other GitHub Actions for R projects
 
@@ -46,7 +46,7 @@ These notes are kept current with the changes in `v2`.
 
 ## Examples
 
-See the [step-security/r-lib-actions/examples](https://github.com/step-security/r-lib-actions/tree/v2/examples) directory
+See the [step-security/r-lib-actions/examples](https://github.com/step-security/r-lib-actions/tree/main/examples) directory
 for a variety of example workflows using these actions.
 
 ## Where to find help
@@ -89,7 +89,7 @@ If your build fails, and you are unsure of why, here are some useful strategies 
 
 1. *How can I customize an action to run R code?*\
 \
-The safest way is to add a `step` to your action, specifying `Rscript {0}` as the `shell` for that step. Here's an example from the [bookdown action](https://github.com/step-security/r-lib-actions/tree/v2-branch/examples#build-bookdown-site):
+The safest way is to add a `step` to your action, specifying `Rscript {0}` as the `shell` for that step. Here's an example from the [bookdown action](https://github.com/step-security/r-lib-actions/tree/main-branch/examples#build-bookdown-site):
     ```yaml
     - name: Build site
       run: bookdown::render_book("index.Rmd", quiet = TRUE)
@@ -103,7 +103,5 @@ The safest way is to add a `step` to your action, specifying `Rscript {0}` as th
   highlighting features of GitHub Actions.
 - [GitHub Actions with R](https://ropenscilabs.github.io/actions_sandbox/) - a short online book about using GitHub Actions with R, produced as part of the [rOpenSci OzUnconf](https://ozunconf19.ropensci.org/).
 - [Awesome Actions](https://github.com/sdras/awesome-actions#awesome-actions---) - a curated list of custom actions. **Note** that many of these are from early in the GitHub Actions beta and may no longer work.
-
-## License ![CC0 licensed](https://img.shields.io/github/license/step-security/r-lib-actions)
 
 All examples in this repository are published with the [MIT](./LICENSE) license.

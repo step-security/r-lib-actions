@@ -255,7 +255,7 @@ packages on the following Linux Distributions:
 
 System dependencies are **not** installed on other operating systems and
 other Linux distributions currently, and you need to install them manually,
-_before_ using the `r-lib/setup-r-dependencies` action.
+_before_ using the `step-security/r-lib-actions/setup-r-dependencies` action.
 
 Also note that the system depedencies of Bioconductor packages are typically
 not installed automatically, so you might need to do this, even on the

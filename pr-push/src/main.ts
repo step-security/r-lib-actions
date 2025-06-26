@@ -20,6 +20,85 @@ async function validateSubscription(): Promise<void> {
   }
 }
 
+function parseAndValidateGitPushArgs(cli_args: string): string[] {
+  const allowedFlags = new Set([
+    "--all",
+    "--atomic",
+    "--dry-run",
+    "--follow-tags",
+    "--force",
+    "--force-with-lease",
+    "--ipv4",
+    "--ipv6",
+    "--mirror",
+    "--no-verify",
+    "--porcelain",
+    "--progress",
+    "--prune",
+    "--quiet",
+    "--set-upstream",
+    "--signed",
+    "--signed=if-asked",
+    "--signed=yes",
+    "--signed=no",
+    "--tags",
+    "--thin",
+    "--verbose",
+    "-f",
+    "-q",
+    "-v",
+    "-u",
+  ]);
+
+  const flagsWithValues = new Set([
+    "--exec",
+    "--receive-pack",
+    "--repo",
+    "--push-option",
+    "-o",
+  ]);
+
+  const passthroughFlags = new Set([
+    "--delete",
+    "-d", // these expect a ref after
+  ]);
+
+  const result: string[] = [];
+  const args = cli_args.trim().split(/\s+/);
+  let i = 0;
+
+  while (i < args.length) {
+    const arg = args[i];
+
+    if (allowedFlags.has(arg)) {
+      result.push(arg);
+    } else if (flagsWithValues.has(arg)) {
+      const next = args[i + 1];
+      if (next && !next.startsWith("-")) {
+        result.push(arg, next);
+        i++;
+      } else {
+        core.warning(`Missing value for flag: ${arg}`);
+      }
+    } else if (arg.includes("=") && flagsWithValues.has(arg.split("=")[0])) {
+      result.push(arg);
+    } else if (passthroughFlags.has(arg)) {
+      const next = args[i + 1];
+      if (next && !next.startsWith("-")) {
+        result.push(arg, next);
+        i++;
+      } else {
+        core.warning(`Missing target for ${arg}`);
+      }
+    } else {
+      core.warning(`Ignoring unsupported or unsafe argument: ${arg}`);
+    }
+
+    i++;
+  }
+  return result;
+}
+
 async function run() {
   try {
     await validateSubscription();
@@ -50,10 +129,12 @@ async function run() {
       `https://x-access-token:${token}@`,
     );
 
+    const safeArgs = parseAndValidateGitPushArgs(cli_args);
+
     await exec.exec("git", [
       "push",
       headCloneURL,
-      cli_args,
+      ...safeArgs,
       `HEAD:${headBranch}`,
     ]);
   } catch (error: any) {
