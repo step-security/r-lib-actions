@@ -10,6 +10,10 @@ to be used by actions which trigger based on comment creation. It is often
 paired with the
 [pr-fetch](https://github.com/step-security/r-lib-actions/tree/main/pr-fetch) action.
 
+## Note
+
+The function ``parseAndValidateGitPushArgs`` in ``src/main.ts`` has been added to prevent command injection. If you face any issues due to the same, please raise a issue [here](https://github.com/step-security/r-lib-actions/issues).
+
 ## Usage
 
 Generally this is used to push back to a pull request associated with a

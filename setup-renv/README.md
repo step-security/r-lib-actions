@@ -45,7 +45,3 @@ quotes (like in the example above for `profile`), that will work.
 # License
 
 The scripts and documentation in this project are released under the [MIT License](LICENSE)
-
-# Contributions
-
-Contributions are welcome!

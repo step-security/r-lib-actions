@@ -150,7 +150,3 @@ create the R profile. Here is an example:
 
 The scripts and documentation in this project are released under the
 [MIT License](LICENSE)
-
-## Contributions
-
-Contributions are welcome!

@@ -6,10 +6,6 @@ for R projects, which can be used to do a variety of CI tasks. It also has a
 number of [example workflows](https://github.com/step-security/r-lib-actions/tree/main/examples) which use
 these actions.
 
-## Getting started
-
-See [this blog post](https://www.tidyverse.org/blog/2022/06/actions-2-0-0/) on the Tidyverse blog.
-
 ## Releases and tags
 
 We use major version tags to mark breaking changes in these actions.
@@ -63,10 +59,6 @@ If your build fails, and you are unsure of why, here are some useful strategies 
 1. If your issue seems related to GitHub Actions, but is not specific to R, open an
    issue at the [GitHub Actions
    Community](https://github.community/t5/GitHub-Actions/bd-p/actions) page.
-1. If you have done all of the above and are __absolutely__ sure there is a bug
-   in one of the R specific actions listed above, check if there is an open issue
-   about it [in this repo](https://github.com/step-security/r-lib-actions/issues). Look at the
-   pinned issues at the top first! We pin issues that affect many people, and the
    issue discussions often contain workarounds.
 1. Otherwise open a [new issue in this repo](https://github.com/step-security/r-lib-actions/issues/new/choose).
 
@@ -104,4 +96,4 @@ The safest way is to add a `step` to your action, specifying `Rscript {0}` as th
 - [GitHub Actions with R](https://ropenscilabs.github.io/actions_sandbox/) - a short online book about using GitHub Actions with R, produced as part of the [rOpenSci OzUnconf](https://ozunconf19.ropensci.org/).
 - [Awesome Actions](https://github.com/sdras/awesome-actions#awesome-actions---) - a curated list of custom actions. **Note** that many of these are from early in the GitHub Actions beta and may no longer work.
 
-All examples in this repository are published with the [MIT](./LICENSE) license.
+All examples in this repository are published with the [CC0](./LICENSE) license.
