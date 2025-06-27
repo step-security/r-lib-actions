@@ -11,19 +11,15 @@ on:
         description: "Specify a base branch"
         required: false
         default: "main"
+      working_directory:
+        description: "Specify a base branch"
+        required: false
+
   schedule:
     - cron: "0 0 * * 1"
 
 jobs:
   audit-fix:
-    strategy:
-      matrix:
-        working_directory:
-          - pr-fetch
-          - pr-push
-          - setup-pandoc
-          - setup-r
-          - setup-tinytex
     uses: step-security/reusable-workflows/.github/workflows/audit_fix.yml@3e8d79e9716f171de1ce34a53e49f87ef9fddec4
     with:
       force: ${{ inputs.force || false }}
