@@ -33,7 +33,7 @@
     "typed-rest-client": "^1.8.11"
   },
   "devDependencies": {
-    "@types/node": "^20.12.10",
+    "@types/node": "^24.0.4",
     "@vercel/ncc": "^0.37.0",
     "prettier": "^3.2.5",
     "typescript": "^5.4.5"
