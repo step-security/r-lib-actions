@@ -281,7 +281,7 @@ runs:
 
       - name: Install pandoc if needed
         if: ${{ steps.check-pandoc.outputs.install == 'true' }}
-        uses: step-security/r-lib-actions/setup-pandoc@release
+        uses: step-security/r-lib-actions/setup-pandoc@v2
         with:
           pandoc-version: ${{ inputs.pandoc-version }}
 

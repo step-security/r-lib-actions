@@ -26,4 +26,6 @@ Keep following things in mind:
 - If package.json does not contain the field "build" in the scripts object or the package manager is not npm then check the files .github/workflows/audt_fix.yml and .github/workflows/actions_release.yml, they should contain script as an input.
 - .vscode folder should not be present
 - If Readme.md file contains any part which tells how the action should be used, then make sure that in the example complete semver tag is not used and only major version is used.
+- In actions that are referencing step-security/r-lib-actions, the action should be pinned to major version
+- In composite actions, the other actions that are being used must be pinned until and unless they are official github actions.
 - Scan the whole code thoroughly for any existing security vulnerabilities that might be exploited by malicious actors.
