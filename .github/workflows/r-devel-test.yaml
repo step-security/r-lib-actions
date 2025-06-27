@@ -39,7 +39,7 @@ jobs:
         with:
           egress-policy: audit
 
-      - uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
 
       - uses: r-hub/actions/debug-shell@e9663823ac5d540b7b2d93436945048a8f6fc4c1 # v1.6.6
 
