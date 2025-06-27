@@ -41,6 +41,11 @@ jobs:
       R_KEEP_PKG_SOURCE: yes
 
     steps:
+      - name: Harden the runner (Audit all outbound calls)
+        uses: step-security/harden-runner@002fdce3c6a235733a90a27c80493a3241e56863 # v2.12.1
+        with:
+          egress-policy: audit
+
       - uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
 
       - uses: ./setup-pandoc
@@ -51,7 +56,7 @@ jobs:
           http-user-agent: ${{ matrix.config.http-user-agent }}
           use-public-rspm: true
 
-      - uses: gaborcsardi/quarto-actions/setup@fix/linux-arm64
+      - uses: gaborcsardi/quarto-actions/setup@c8ce6c762ce2020772c2afc5b993591f1727022d # fix/linux-arm64
 
       - uses: ./setup-r-dependencies
         with:

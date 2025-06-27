@@ -23,6 +23,11 @@ jobs:
       rversions: ${{ steps.setup-matrix.outputs.rversions }}
 
     steps:
+    - name: Harden the runner (Audit all outbound calls)
+      uses: step-security/harden-runner@002fdce3c6a235733a90a27c80493a3241e56863 # v2.12.1
+      with:
+        egress-policy: audit
+
     - name: Set up build matrix
       id: setup-matrix
       run: |
@@ -39,6 +44,11 @@ jobs:
     name: ${{ github.event.inputs.inpos }} (${{ matrix.r }})
 
     steps:
+    - name: Harden the runner (Audit all outbound calls)
+      uses: step-security/harden-runner@002fdce3c6a235733a90a27c80493a3241e56863 # v2.12.1
+      with:
+        egress-policy: audit
+
     - uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
 
     - uses: ./setup-r
