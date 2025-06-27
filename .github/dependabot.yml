@@ -1,0 +1,36 @@
+version: 2
+updates:
+  - package-ecosystem: docker
+    directory: /.clusterfuzzlite
+    schedule:
+      interval: daily
+
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: daily
+
+  - package-ecosystem: npm
+    directory: /pr-fetch
+    schedule:
+      interval: daily
+
+  - package-ecosystem: npm
+    directory: /pr-push
+    schedule:
+      interval: daily
+
+  - package-ecosystem: npm
+    directory: /setup-pandoc
+    schedule:
+      interval: daily
+
+  - package-ecosystem: npm
+    directory: /setup-r
+    schedule:
+      interval: daily
+
+  - package-ecosystem: npm
+    directory: /setup-tinytex
+    schedule:
+      interval: daily
