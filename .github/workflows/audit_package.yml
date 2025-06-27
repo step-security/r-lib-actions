@@ -24,7 +24,7 @@ jobs:
     with:
       force: ${{ inputs.force || false }}
       base_branch: ${{ inputs.base_branch || 'main' }}
-      working_directory: ${{ matrix.working_directory }}
+      working_directory: ${{ inputs.working_directory }}
 
 permissions:
   contents: write
