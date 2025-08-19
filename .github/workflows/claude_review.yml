@@ -32,7 +32,7 @@ jobs:
         # Optional: Filter by PR author
         if: contains(join(github.event.pull_request.labels.*.name, ','), 'review required')
         id: claude-review
-        uses: anthropics/claude-code-action@ebbd9e9be4686249a2952e1a558bbaba07524380 # beta
+        uses: anthropics/claude-code-action@02e9ed31816be8cb8d521a26f4ba981e5c89ac5e # beta
         with:
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
           
