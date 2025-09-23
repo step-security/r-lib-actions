@@ -21,7 +21,7 @@ jobs:
       id-token: write
       contents: write
 
-    uses: step-security/reusable-workflows/.github/workflows/actions_release.yaml@3e8d79e9716f171de1ce34a53e49f87ef9fddec4
+    uses: step-security/reusable-workflows/.github/workflows/actions_release.yaml@v1
     with:
       tag: "${{ github.event.inputs.tag }}"
       working_directory: ${{github.event.inputs.working_directory}}
