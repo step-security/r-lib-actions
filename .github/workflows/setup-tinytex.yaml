@@ -1,8 +1,8 @@
-on:
+on: 
   push:
-    branches: [main, master]
+    branches: ["main"]
   pull_request:
-    branches: [main, master]
+    branches: ["main"]
   workflow_dispatch:
 
 name: "setup-tinytex test"
@@ -17,10 +17,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        config:
-          - { os: macos-latest   }
-          - { os: windows-latest }
-          - { os: ubuntu-latest  }
+        config: ${{ github.actor == 'dependabot[bot]' && fromJSON('[{"os":"ubuntu-latest"}]') || fromJSON('[{"os":"ubuntu-latest"},{"os":"macos-latest"},{"os":"windows-latest"}]') }}
 
     steps:
       - name: Harden the runner (Audit all outbound calls)
