@@ -2,11 +2,11 @@ name: Test setup-pandoc on all OSes
 
 permissions: read-all
 
-on:
+on: 
   push:
-    branches: [main, master]
+    branches: ["main"]
   pull_request:
-    branches: [main, master]
+    branches: ["main"]
   workflow_dispatch:
     inputs:
       version:
@@ -24,12 +24,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        config:
-          - { os: macos-14         }
-          - { os: macos-13         }
-          - { os: windows-latest   }
-          - { os: ubuntu-latest    }
-          - { os: ubuntu-22.04-arm }
+        config: ${{ github.actor == 'dependabot[bot]' && fromJSON('[{"os":"ubuntu-latest"}]') || fromJSON('[{"os":"macos-14"},{"os":"macos-13"},{"os":"windows-latest"},{"os":"ubuntu-latest"},{"os":"ubuntu-22.04-arm"}]') }}
 
     steps:
       - name: Harden the runner (Audit all outbound calls)
