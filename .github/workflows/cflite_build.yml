@@ -1,10 +1,7 @@
 name: ClusterFuzzLite continuous builds
-on:
+on: 
   push:
-    branches:
-      - main
-    paths:
-      - 'src/**'
+    branches: ["main"]
   workflow_dispatch:
 
 permissions: read-all

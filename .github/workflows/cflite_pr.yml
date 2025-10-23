@@ -1,4 +1,5 @@
 name: ClusterFuzzLite PR fuzzing
+
 on:
   pull_request:
     paths:
@@ -6,8 +7,7 @@ on:
   push:
     branches:
       - main
-    paths:
-      - 'src/**'
+
   workflow_dispatch:
 
 permissions: read-all
