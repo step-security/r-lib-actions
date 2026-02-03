@@ -24,7 +24,7 @@ jobs:
           - setup-pandoc
           - setup-r
           - setup-tinytex
-    uses: step-security/reusable-workflows/.github/workflows/audit_fix.yml@3e8d79e9716f171de1ce34a53e49f87ef9fddec4
+    uses: step-security/reusable-workflows/.github/workflows/audit_fix.yml@v1
     with:
       force: ${{ inputs.force || false }}
       base_branch: ${{ inputs.base_branch || 'main' }}
