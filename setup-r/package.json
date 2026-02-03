@@ -30,7 +30,7 @@
     "axios": "^1.10.0",
     "linux-os-info": "^2.0.0",
     "semver": "^7.6.0",
-    "typed-rest-client": "^1.8.11"
+    "typed-rest-client": "^2.1.0"
   },
   "devDependencies": {
     "@types/node": "^20.12.10",
