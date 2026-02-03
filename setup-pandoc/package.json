@@ -30,7 +30,7 @@
     "@actions/tool-cache": "^2.0.1",
     "@octokit/action": "^6.1.0",
     "axios": "^1.10.0",
-    "compare-versions": "^6.1.0"
+    "compare-versions": "^6.1.1"
   },
   "devDependencies": {
     "@types/node": "^20.12.10",
