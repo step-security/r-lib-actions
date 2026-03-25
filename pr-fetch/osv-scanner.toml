@@ -1,0 +1,19 @@
+[[IgnoredVulns]]
+id = "GHSA-v9p9-hfj2-hcw8"
+reason = "undici WebSocket client crash via invalid server_max_window_bits - not exploitable, pr-fetch never uses WebSockets"
+
+[[IgnoredVulns]]
+id = "GHSA-vrm6-8vpv-qv8q"
+reason = "undici WebSocket decompression bomb - not exploitable, pr-fetch never uses WebSockets"
+
+[[IgnoredVulns]]
+id = "GHSA-2mjp-6q6p-2qxm"
+reason = "undici HTTP request smuggling via duplicate Content-Length headers - not exploitable, Octokit constructs headers internally with no user-controlled input"
+
+[[IgnoredVulns]]
+id = "GHSA-g9mf-h72j-4rw9"
+reason = "undici unbounded decompression chain in Content-Encoding - not exploitable, pr-fetch uses Octokit REST client against GitHub API, not undici fetch()"
+
+[[IgnoredVulns]]
+id = "GHSA-4992-7rv2-5pvq"
+reason = "undici CRLF injection via upgrade option - not exploitable, Octokit never uses the undici upgrade option"

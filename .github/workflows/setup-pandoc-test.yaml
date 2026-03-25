@@ -24,7 +24,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        config: ${{ github.actor == 'dependabot[bot]' && fromJSON('[{"os":"ubuntu-latest"}]') || fromJSON('[{"os":"macos-14"},{"os":"macos-13"},{"os":"windows-latest"},{"os":"ubuntu-latest"},{"os":"ubuntu-22.04-arm"}]') }}
+        config: ${{ github.actor == 'dependabot[bot]' && fromJSON('[{"os":"ubuntu-latest"}]') || fromJSON('[{"os":"macos-14"},{"os":"macos-latest"},{"os":"windows-latest"},{"os":"ubuntu-latest"},{"os":"ubuntu-22.04-arm"}]') }}
 
     steps:
       - name: Harden the runner (Audit all outbound calls)
