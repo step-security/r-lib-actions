@@ -10,6 +10,10 @@ on:
         description: "Working directories to run commands in (comma-separated, optional)"
         required: false
         type: string
+      node_version:
+        description: "Specify Node.js version (e.g., '18', '20', 'lts/*')"
+        required: false
+        default: "24"
 
 permissions:
   contents: read
@@ -25,3 +29,4 @@ jobs:
     with:
       tag: "${{ github.event.inputs.tag }}"
       working_directory: ${{github.event.inputs.working_directory}}
+      node_version: "${{ github.event.inputs.node_version }}"
