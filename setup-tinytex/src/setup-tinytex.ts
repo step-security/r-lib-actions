@@ -152,14 +152,12 @@ async function installTinyTeXWindows() {
   const fs = require("fs");
   console.log(path.join(tempDirectory, fileName));
   var text = fs.readFileSync(path.join(tempDirectory, fileName), "utf8");
-  var textWithoutLastLine = text.split("\n").slice(0, -2).join("\n");
-  fs.writeFile(
-    path.join(tempDirectory, fileName),
-    textWithoutLastLine,
-    function (err, result) {
-      if (err) console.log("error", err);
-    },
-  );
+  // Upstream uses single-quoted URLs (`curl.exe -fsSLO 'https://...'`) which
+  // are not stripped by Windows cmd.exe — curl receives the literal quotes
+  // and rejects the URL. Replace with double quotes to make cmd.exe quote them.
+  var textFixedQuotes = text.replace(/'/g, '"');
+  var textWithoutLastLine = textFixedQuotes.split("\n").slice(0, -2).join("\n");
+  fs.writeFileSync(path.join(tempDirectory, fileName), textWithoutLastLine);
 
   try {
     exec.exec(path.join(tempDirectory, fileName));
